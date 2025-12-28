@@ -1,6 +1,8 @@
 
 export type Language = 'en' | 'pl';
 
+export type Page = 'home' | 'services' | 'about' | 'faq' | 'blog' | 'article';
+
 export interface ServiceItem {
   title: string;
   description: string;
@@ -13,6 +15,9 @@ export interface DetailedServiceItem extends ServiceItem {
   howWeProvide: string;
   reassurance: string;
   icon: string;
+  whatsIncluded?: string[];
+  practicalExamples?: string[];
+  img?: string;
 }
 
 export interface TrustIndicator {
@@ -170,7 +175,10 @@ export interface TranslationStrings {
     intro: string;
     whoItIsForLabel: string;
     howWeProvideLabel: string;
+    whatsIncludedLabel: string;
+    practicalExamplesLabel: string;
     discussButton: string;
+    callNowButton: string;
     closingTitle: string;
     closingText: string;
     closingSub: string;

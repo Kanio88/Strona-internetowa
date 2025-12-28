@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Everyday Care Plus - Professional Home Support in Sandwell & Dudley</title>
-    <link rel="icon" type="image/png" href="https://imgur.com/vH9v5z4.png" />
+    <!-- Favicon using the heart variant logo -->
+    <link rel="icon" type="image/png" href="https://imgur.com/7YjR6r9.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -22,14 +22,22 @@
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              serif: ['Inter', 'sans-serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+              openSans: ['Open Sans', 'sans-serif'],
             },
-            spacing: {
-              '18': '72px',
+            animation: {
+              fadeIn: 'fadeIn 0.8s ease-out forwards',
+              slideDown: 'slideDown 0.3s ease-out forwards',
             },
-            lineHeight: {
-              'tight': '1.3',
-              'relaxed': '1.7',
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideDown: {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
             }
           }
         }
@@ -41,9 +49,9 @@
         color: #0A1F44;
         background-color: #FFFFFF;
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
       }
       
-      /* Skip to content link */
       .skip-link {
         position: absolute;
         top: -100px;
@@ -54,143 +62,30 @@
         z-index: 100;
         transition: top 0.2s;
         font-weight: 700;
-        border-radius: 0 0 8px 0;
       }
       .skip-link:focus {
         top: 0;
-        outline: 4px solid #1E73BE;
       }
 
-      /* Typography System */
-      h1, .h1 { font-size: 30px; line-height: 1.2; font-weight: 700; }
-      @media (min-width: 768px) { h1, .h1 { font-size: 44px; } }
-      
-      h2, .h2 { font-size: 24px; line-height: 1.3; font-weight: 600; }
-      @media (min-width: 768px) { h2, .h2 { font-size: 36px; } }
-      
-      h3, .h3 { font-size: 22px; line-height: 1.3; font-weight: 600; }
-      @media (min-width: 768px) { h3, .h3 { font-size: 28px; } }
-
-      h4, .h4 { font-size: 20px; line-height: 1.3; font-weight: 600; }
-      @media (min-width: 768px) { h4, .h4 { font-size: 24px; } }
-      
-      .body-text { font-size: 16px; line-height: 1.7; font-weight: 400; color: #0A1F44; }
-      @media (min-width: 768px) { .body-text { font-size: 18px; } }
-      
-      .small-text { font-size: 14px; line-height: 1.6; font-weight: 400; }
-      @media (min-width: 768px) { .small-text { font-size: 16px; } }
-
-      /* Form Elements Styling */
-      .form-label {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        color: #0A1F44;
-        margin-bottom: 8px;
-        letter-spacing: 0.025em;
-      }
-
-      .form-input {
-        width: 100%;
-        background-color: #FFFFFF;
-        border: 1.5px solid #D1D5DB;
-        border-radius: 8px;
-        padding: 12px 16px;
-        font-size: 16px;
-        color: #0A1F44;
-        transition: all 0.2s ease-in-out;
-        min-height: 48px;
-      }
-
-      .form-input::placeholder {
-        color: #9CA3AF;
-      }
-
-      .form-input:focus {
-        outline: none;
-        border-color: #1E73BE;
-        box-shadow: 0 0 0 4px rgba(30, 115, 190, 0.1);
-      }
-
-      .form-input.error {
-        border-color: #B91C1C;
-      }
-
-      .error-message {
-        color: #B91C1C;
-        font-size: 14px;
-        margin-top: 4px;
-        font-weight: 500;
-      }
-
-      .form-checkbox {
-        width: 20px;
-        height: 20px;
-        border-radius: 4px;
-        border: 1.5px solid #0A1F44;
-        color: #1E73BE;
-        cursor: pointer;
-      }
-
-      /* Buttons */
-      .btn-primary {
-        background-color: #F47C20;
-        color: #FFFFFF;
-        font-weight: 600;
-        border-radius: 8px;
-        padding: 14px 24px;
-        transition: all 0.2s ease-in-out;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .btn-primary:hover {
-        background-color: #d46a1a;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-
-      .btn-secondary {
-        border: 2px solid #1E73BE;
-        color: #1E73BE;
-        font-weight: 600;
-        border-radius: 8px;
-        padding: 14px 24px;
-        transition: all 0.2s ease-in-out;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .btn-secondary:hover {
-        background-color: #1E73BE;
-        color: #FFFFFF;
-      }
-
-      /* Keyboard Focus State */
-      *:focus-visible {
+      /* Base focus styles for accessibility */
+      button:focus-visible, a:focus-visible {
         outline: 3px solid #1E73BE;
         outline-offset: 2px;
       }
 
-      .reading-container {
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
+      /* Custom scrollbar for brand feel */
+      ::-webkit-scrollbar {
+        width: 10px;
       }
-      
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0A1F44;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #1E73BE;
       }
     </style>
   <script type="importmap">
