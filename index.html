@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everyday Care Plus - Professional Home Support in Sandwell & Dudley</title>
+    <link rel="icon" type="image/png" href="https://imgur.com/vH9v5z4.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-navy': '#0A1F44',
+              'brand-blue': '#1E73BE',
+              'brand-orange': '#F47C20',
+              'light-grey': '#F5F7FA',
+              'form-border': '#D1D5DB',
+              'error-red': '#B91C1C',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Inter', 'sans-serif'],
+            },
+            spacing: {
+              '18': '72px',
+            },
+            lineHeight: {
+              'tight': '1.3',
+              'relaxed': '1.7',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #0A1F44;
+        background-color: #FFFFFF;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* Skip to content link */
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: #F47C20;
+        color: white;
+        padding: 12px 24px;
+        z-index: 100;
+        transition: top 0.2s;
+        font-weight: 700;
+        border-radius: 0 0 8px 0;
+      }
+      .skip-link:focus {
+        top: 0;
+        outline: 4px solid #1E73BE;
+      }
+
+      /* Typography System */
+      h1, .h1 { font-size: 30px; line-height: 1.2; font-weight: 700; }
+      @media (min-width: 768px) { h1, .h1 { font-size: 44px; } }
+      
+      h2, .h2 { font-size: 24px; line-height: 1.3; font-weight: 600; }
+      @media (min-width: 768px) { h2, .h2 { font-size: 36px; } }
+      
+      h3, .h3 { font-size: 22px; line-height: 1.3; font-weight: 600; }
+      @media (min-width: 768px) { h3, .h3 { font-size: 28px; } }
+
+      h4, .h4 { font-size: 20px; line-height: 1.3; font-weight: 600; }
+      @media (min-width: 768px) { h4, .h4 { font-size: 24px; } }
+      
+      .body-text { font-size: 16px; line-height: 1.7; font-weight: 400; color: #0A1F44; }
+      @media (min-width: 768px) { .body-text { font-size: 18px; } }
+      
+      .small-text { font-size: 14px; line-height: 1.6; font-weight: 400; }
+      @media (min-width: 768px) { .small-text { font-size: 16px; } }
+
+      /* Form Elements Styling */
+      .form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0A1F44;
+        margin-bottom: 8px;
+        letter-spacing: 0.025em;
+      }
+
+      .form-input {
+        width: 100%;
+        background-color: #FFFFFF;
+        border: 1.5px solid #D1D5DB;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 16px;
+        color: #0A1F44;
+        transition: all 0.2s ease-in-out;
+        min-height: 48px;
+      }
+
+      .form-input::placeholder {
+        color: #9CA3AF;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #1E73BE;
+        box-shadow: 0 0 0 4px rgba(30, 115, 190, 0.1);
+      }
+
+      .form-input.error {
+        border-color: #B91C1C;
+      }
+
+      .error-message {
+        color: #B91C1C;
+        font-size: 14px;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+
+      .form-checkbox {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1.5px solid #0A1F44;
+        color: #1E73BE;
+        cursor: pointer;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background-color: #F47C20;
+        color: #FFFFFF;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 14px 24px;
+        transition: all 0.2s ease-in-out;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary:hover {
+        background-color: #d46a1a;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .btn-secondary {
+        border: 2px solid #1E73BE;
+        color: #1E73BE;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 14px 24px;
+        transition: all 0.2s ease-in-out;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-secondary:hover {
+        background-color: #1E73BE;
+        color: #FFFFFF;
+      }
+
+      /* Keyboard Focus State */
+      *:focus-visible {
+        outline: 3px solid #1E73BE;
+        outline-offset: 2px;
+      }
+
+      .reading-container {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

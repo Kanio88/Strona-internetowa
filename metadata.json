@@ -1,0 +1,7 @@
+{
+  "name": "CompassionCare - Professional Home Support",
+  "description": "A warm, trust-focused domiciliary care website providing professional support for families and NHS professionals. Features bilingual support, service overviews, and an AI care assistant.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
